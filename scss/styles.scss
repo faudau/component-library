@@ -1,0 +1,80 @@
+/* color palette */
+
+$coreColor: #56789A;
+$coreColor0: lighten($coreColor, 100%);
+$coreColor50: lighten($coreColor, 50%);
+$coreColor100: lighten($coreColor, 40%);
+$coreColor200: lighten($coreColor, 30%);
+$coreColor300: lighten($coreColor, 20%);
+$coreColor400: lighten($coreColor, 10%);
+$coreColor600: darken($coreColor, 10%);
+$coreColor700: darken($coreColor, 20%);
+$coreColor800: darken($coreColor, 30%);
+$coreColor900: darken($coreColor, 40%);
+$coreColor1000: darken($coreColor, 100%);
+
+$primaryColor: #024598;
+$purple: #450298;
+
+body, input, textarea, select {
+	font-family: 'Roboto', sans-serif;
+	color: $coreColor800;
+}
+
+a {
+	color: $coreColor600;
+	text-decoration: none;
+	
+	&:visited {
+		color: $purple;
+	}
+}
+
+$tocWidth: 250px;
+
+.toc {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	width: $tocWidth;
+	background-color: $coreColor50;
+	z-index: 10;
+	
+	.site-title {
+		font-size: 1.2rem;
+		letter-spacing: -1px;
+		font-weight: 900;
+		color: $coreColor600;
+		text-transform: uppercase;
+		margin: 1rem;
+	}
+	
+	nav {
+		ul {
+			padding: 0;
+			margin: 0;
+			list-style: none;
+			
+			li {
+				padding: 0.5rem 1em;
+				transition: background 0.3s linear;
+				.menu-item {
+					
+					&.level1 {
+						font-weight: 700;
+					}
+				}
+				&:hover, &:focus {
+					background-color: $coreColor100;
+				}
+			}
+		}
+	}
+}
+
+.content {
+	position: relative;
+	z-index: 0;
+	margin-left: $tocWidth;
+}
